@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Encode+Sans:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+        <title>Waste Wise - FOGO BIN</title>
+    </head>
+    <body>
+        <!-- Mobile Navigation -->
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="./index.html"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <a href="exchange_product.html"
+                        ><span class="icon"></span
+                    ></a>
+                </li>
+                <li>
+                    <a href="events.html"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <a href="recipe.html" aria-current="page"
+                        ><span class="icon"></span
+                    ></a>
+                </li>
+                <li>
+                    <a href="setting.html"><span class="icon">⚙️</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Desktop Navigation -->
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="exchange_product.html">Exchange Products</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="recipe.html" aria-current="page">Recipe</a></li>
+                <li><a href="setting.html">Setting</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        
+        <main>
+            <section class="category-section" style="text-align: center; padding: 3rem 1rem;">
+                <h1 style="font-family: 'Alfa Slab One', cursive; font-size: 2rem; background-color: #a0c59b; color: #2f4f2f; padding: 10px 20px; border-radius: 10px; display: inline-block;margin-top: 60px;">
+                    What Goes in the FOGO Bin?<br />
+                    Choose a Category
+                </h1>
+            
+                <div class="category-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                    <!-- Food Organic Card -->
+                    <a href="food-organic.html" class="category-card" style="background-color: #fff9ea; border-radius: 20px; padding: 2rem; width: 250px; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                        <img src="images/food_organic.png" alt="Food Organic" style="width: 120px; height: auto; margin-bottom: 1rem;" />
+                        <h2 style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; color: #2f4f2f;">Food Organic</h2>
+                        <div style="font-size: 1.5rem; color: #2f4f2f;">→</div>
+                    </a>
+            
+                    <!-- Garden Organic Card -->
+                    <a href="garden-organic.html" class="category-card" style="background-color: #fff9ea; border-radius: 20px; padding: 2rem; width: 250px; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                        <img src="images/garden_organic.png" alt="Garden Organic" style="width: 120px; height: auto; margin-bottom: 1rem;" />
+                        <h2 style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; color: #2f4f2f;">Garden Organic</h2>
+                        <div style="font-size: 1.5rem; color: #2f4f2f;">→</div>
+                    </a>
+                </div>
+            </section>
+        </main>
+            
+        
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer-row">
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="policy.html">Policy and Privacy</a></li>
+                    </ul>
+                    <div class="footer-brand">
+                        <img
+                            src="images/logo.png"
+                            alt="Site logo"
+                            class="footer-logo"
+                        />
+                        <span>Waste Wise</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

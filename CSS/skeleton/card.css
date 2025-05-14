@@ -1,0 +1,50 @@
+/*Card container*/
+/* 卡片容器 */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    background: #f7f7f7;
+}
+
+/* 卡片樣式 */
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 1.5rem 1.2rem;
+    width: calc(50% - 2rem); /* ⬅️ 每排兩張卡片 */
+    max-width: 520px;
+    min-width: 340px;
+    transition: box-shadow 
+}
+
+.card-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 2rem); /* ⬅️ 手機版每排一張卡片 */
+        max-width: 100%;
+    }
+}

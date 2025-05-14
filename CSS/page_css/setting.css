@@ -1,0 +1,12 @@
+@import url('../skeleton/button.css');
+@import url('../skeleton/card.css');
+@import url('../skeleton/form.css');
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color, #6a9e3a);
+    margin-bottom: 1rem;
+}

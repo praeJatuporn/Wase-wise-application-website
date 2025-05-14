@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--Goolge font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Encode+Sans:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+        
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        
+        <title>Merchant Platform - Waste Wise</title>
+    </head>
+    
+    <body>
+        <!--Set up Page mobile & Desktop-->
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="./index.html"><span class="icon">🏡</span></a>
+                </li>
+                <li>
+                    <a href="exchange_product.html"><span class="icon">🔃</span></a>
+                </li>
+                <li>
+                    <a href="events.html"><span class="icon">🗓️</span></a>
+                </li>
+                <li>
+                    <a href="recipe.html"><span class="icon">📋</span></a>
+                </li>
+                <li>
+                    <a href="setting.html"><span class="icon">⚙️</span></a>
+                </li>
+            </ul>
+        </nav>
+        
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li><a href="exchange_product.html">Exchange Products</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="recipe.html">Recipe</a></li>
+                <li><a href="setting.html">Setting</a></li>
+            </ul>
+        </nav>
+        <!--END Set up Page mobile & Desktop-->
+        
+        <main>
+            <section class="hero-section merchant">
+                <div class="container">
+                    <h1>Merchant Platform</h1>
+                    <p>Sell soon-to-expire products at discounted prices, reduce waste, and increase revenue</p>
+                    <div class="cta-buttons">
+                        <button class="btn-large">Login as Merchant</button>
+                        <button class="btn-large btn-outline">Register as Merchant</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits-section">
+                <div class="container">
+                    <h2>Why Join the Waste Wise Merchant Platform?</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">♻️</div>
+                            <h3>Reduce Food Waste</h3>
+                            <p>Find new homes for soon-to-expire products and contribute to environmental sustainability</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💰</div>
+                            <h3>Increase Revenue</h3>
+                            <p>Convert potential waste into income and improve your bottom line</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">👥</div>
+                            <h3>Attract New Customers</h3>
+                            <p>Connect with eco-conscious and budget-friendly shoppers, expanding your market reach</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">📊</div>
+                            <h3>Enhance Brand Image</h3>
+                            <p>Demonstrate your commitment to sustainability and social responsibility</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="merchant-dashboard">
+                <div class="container">
+                    <h2>Merchant Dashboard</h2>
+                    <div class="dashboard-preview">
+                        <div class="dashboard-sidebar">
+                            <ul class="dashboard-menu">
+                                <li class="active"><a href="#">Product Management</a></li>
+                                <li><a href="#">Order Management</a></li>
+                                <li><a href="#">Marketing Campaigns</a></li>
+                                <li><a href="#">Customer Feedback</a></li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-header">
+                                <h3>Product Management</h3>
+                                <button class="btn-primary">Add New Product</button>
+                            </div>
+                            <div class="product-management">
+                                <table class="product-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Original Price</th>
+                                            <th>Discount Price</th>
+                                            <th>Expiry Date</th>
+                                            <th>Stock</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Organic Vegetable Box</td>
+                                            <td>$8.00</td>
+                                            <td>$1.50</td>
+                                            <td>May 15, 2025</td>
+                                            <td>12</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td>
+                                                <button class="btn-small">Edit</button>
+                                                <button class="btn-small btn-danger">Unpublish</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Whole Wheat Bread</td>
+                                            <td>$6.00</td>
+                                            <td>$2.50</td>
+                                            <td>May 16, 2025</td>
+                                            <td>8</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td>
+                                                <button class="btn-small">Edit</button>
+                                                <button class="btn-small btn-danger">Unpublish</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Local Farm Milk</td>
+                                            <td>$4.50</td>
+                                            <td>$1.00</td>
+                                            <td>May 20, 2025</td>
+                                            <td>20</td>
+                                            <td><span class="status draft">Draft</span></td>
+                                            <td>
+                                                <button class="btn-small">Edit</button>
+                                                <button class="btn-small btn-success">Publish</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-upload">
+                <div class="container">
+                    <h2>How to List Your Products</h2>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h3>Register as a Merchant</h3>
+                            <p>Provide basic information and business credentials to verify your merchant status</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h3>Add Product Details</h3>
+                            <p>Upload product photos, descriptions, original prices, discount prices, and expiration dates</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h3>Set Pickup Options</h3>
+                            <p>Provide collection points or delivery options for customer convenience</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <h3>Manage Orders</h3>
+                            <p>Confirm orders, prepare products, and complete transactions</p>
+                        </div>
+                    </div>
+                    <div class="cta-center">
+                        <button class="btn-large">Get Started Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <div class="container">
+                    <h2>Merchant Success Stories</h2>
+                    <div class="testimonial-slider">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">"Since joining the Waste Wise platform, our bakery's sales of day-old bread have increased by 60%. We've significantly reduced food waste while improving our community presence."</div>
+                            <div class="testimonial-author">
+                                <img src="/api/placeholder/60/60" alt="Merchant avatar" class="testimonial-avatar" />
+                                <div class="testimonial-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Morning Light Bakery</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">"The platform is intuitive and our customers love it. Our supermarket has seen a 40% improvement in turnover for soon-to-expire goods. It's truly a win-win solution."</div>
+                            <div class="testimonial-author">
+                                <img src="/api/placeholder/60/60" alt="Merchant avatar" class="testimonial-avatar" />
+                                <div class="testimonial-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Green Earth Market</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="analytics-preview">
+                <div class="container">
+                    <h2>Track Your Performance</h2>
+                    <p>Access comprehensive analytics to monitor sales, customer behavior, and environmental impact</p>
+                    <div class="analytics-display">
+                        <div class="analytics-card">
+                            <h3>Sales Overview</h3>
+                            <div class="chart-placeholder">
+                                <img src="/api/placeholder/400/220" alt="Sales chart placeholder" />
+                            </div>
+                            <div class="metrics-row">
+                                <div class="metric">
+                                    <span class="metric-value">$1,240</span>
+                                    <span class="metric-label">Weekly Revenue</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">87</span>
+                                    <span class="metric-label">Orders</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">76%</span>
+                                    <span class="metric-label">Waste Reduction</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Top-Selling Products</h3>
+                            <ul class="product-rankings">
+                                <li>
+                                    <span class="rank">1</span>
+                                    <span class="product-name">Organic Fruit Basket</span>
+                                    <span class="product-sales">42 sold</span>
+                                </li>
+                                <li>
+                                    <span class="rank">2</span>
+                                    <span class="product-name">Artisan Sourdough Bread</span>
+                                    <span class="product-sales">38 sold</span>
+                                </li>
+                                <li>
+                                    <span class="rank">3</span>
+                                    <span class="product-name">Organic Yogurt Pack</span>
+                                    <span class="product-sales">31 sold</span>
+                                </li>
+                                <li>
+                                    <span class="rank">4</span>
+                                    <span class="product-name">Fresh Farm Eggs</span>
+                                    <span class="product-sales">27 sold</span>
+                                </li>
+                                <li>
+                                    <span class="rank">5</span>
+                                    <span class="product-name">Local Cheese Selection</span>
+                                    <span class="product-sales">23 sold</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <div class="container">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">Are there any fees to join the platform?</div>
+                            <div class="faq-answer">
+                                <p>We operate on a lightweight commission model. You only pay a small percentage on successful sales, with no upfront costs or monthly fees.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How is food safety ensured?</div>
+                            <div class="faq-answer">
+                                <p>All products must be within their expiration date. We regularly audit product listings to ensure they meet safety standards.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How are refunds and complaints handled?</div>
+                            <div class="faq-answer">
+                                <p>We provide a streamlined refund process and customer service support to help you efficiently resolve customer issues.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What types of products can I sell?</div>
+                            <div class="faq-answer">
+                                <p>You can sell various food items including but not limited to produce, baked goods, dairy products, meats, and prepared foods, as long as they are within their expiration date and meet quality standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="container">
+                    <h2>Contact Us</h2>
+                    <p>Have questions or need more information? Reach out to our merchant support team anytime</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <p>1-800-WASTE-WISE</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <p>merchants@wastewise.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <p>Live Chat 9AM-6PM EST</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer-row">
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="policy.html">Policy and Privacy</a></li>
+                    </ul>
+                    <div class="footer-brand">
+                        <img
+                            src="images/logo.png"
+                            alt="Site logo"
+                            class="footer-logo"
+                        />
+                        <span>Waste Wise</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

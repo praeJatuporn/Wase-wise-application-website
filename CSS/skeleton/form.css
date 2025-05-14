@@ -1,0 +1,63 @@
+/*example form*/
+/* 表單容器 */
+.form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* 表單標籤 */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 表單輸入欄位 */
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    background: #fafafa;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: var(--primary-color, #6a9e3a);
+    outline: none;
+}
+
+/* 表單按鈕 */
+.form-button {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: var(--primary-color, #6a9e3a);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-button:hover {
+    background: var(--secondary-color, #4e7d2c);
+}
+
+/* form button style */
+.form-button, .button, .primary-button, .secondary-button {
+    min-width: 180px;
+    min-height: 44px;
+    font-size: 1.1rem;
+    padding: 0.8rem 0;
+    box-sizing: border-box;
+}

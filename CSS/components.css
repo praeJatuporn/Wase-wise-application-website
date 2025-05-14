@@ -1,0 +1,127 @@
+/* MENUS */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Mobile Navigation */
+#nav-mobile {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: var(--primary-color);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+}
+
+#nav-mobile ul li a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#nav-mobile ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Desktop Navigation */
+#nav-desktop {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: none;
+    height: 60px;
+    z-index: 9999;
+}
+
+#nav-desktop ul li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-family: "Alfa Slab One", serif;
+}
+
+#nav-desktop ul li a:hover {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Responsive control */
+@media screen and (min-width: 768px) {
+    #nav-desktop {
+        display: block;
+    }
+
+    #nav-mobile {
+        display: none;
+    }
+}
+
+/* footer style */
+.footer {
+    background-color: var(--primary-color);
+    padding: 1.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    border-top: 1px solid #ccc;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+

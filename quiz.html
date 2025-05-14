@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--Goolge font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Encode+Sans:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+        <title>Waste Wise</title>
+
+        <style>
+            :root {
+                --primary-color: #4CAF50;
+                --secondary-color: #2196F3;
+                --dark-color: #333;
+                --light-color: #f4f4f4;
+                --danger-color: #ff5252;
+                --success-color: #66bb6a;
+                --fogo-color: #8BC34A;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            /* Game specific styles */
+            .game-title {
+                text-align: center;
+                margin-bottom: 30px;
+                color: var(--fogo-color);
+                font-size: 2.5rem;
+            }
+
+            .game-description {
+                text-align: center;
+                margin-bottom: 30px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .game-area {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                margin-bottom: 40px;
+            }
+
+            .trash-bin {
+                width: 200px;
+                height: 250px;
+                background-image: url('/api/placeholder/200/250');
+                background-color: var(--fogo-color);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-bottom: 30px;
+                position: relative;
+                transition: transform 0.3s ease;
+                border-radius: 15px;
+                border: 3px solid #558B2F;
+            }
+
+            .bin-label {
+                text-align: center;
+                font-weight: bold;
+                color: var(--fogo-color);
+                margin-top: 10px;
+                font-size: 1.2rem;
+            }
+
+            .waste-items {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
+                max-width: 800px;
+            }
+
+            .waste-item {
+                width: 80px;
+                height: 80px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: grab;
+                transition: transform 0.2s ease;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+            }
+
+            .waste-item:hover {
+                transform: scale(1.1);
+            }
+
+            .waste-item.dragging {
+                opacity: 0.6;
+            }
+
+            .feedback {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 15px 30px;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                z-index: 100;
+            }
+
+            .feedback.success {
+                background-color: var(--success-color);
+            }
+
+            .feedback.error {
+                background-color: var(--danger-color);
+            }
+
+            .feedback.show {
+                opacity: 1;
+            }
+
+            .scoreboard {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin-bottom: 20px;
+                font-size: 1.2rem;
+            }
+
+            .score, .errors {
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+
+            .score {
+                background-color: var(--success-color);
+                color: white;
+            }
+
+            .errors {
+                background-color: var(--danger-color);
+                color: white;
+            }
+
+            .shake {
+                animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+            }
+
+            @keyframes shake {
+                10%, 90% {
+                    transform: translate3d(-1px, 0, 0);
+                }
+                20%, 80% {
+                    transform: translate3d(2px, 0, 0);
+                }
+                30%, 50%, 70% {
+                    transform: translate3d(-4px, 0, 0);
+                }
+                40%, 60% {
+                    transform: translate3d(4px, 0, 0);
+                }
+            }
+
+            .reset-btn {
+                background-color: var(--primary-color);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin-top: 20px;
+            }
+
+            .reset-btn:hover {
+                background-color: #3e8e41;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .waste-items {
+                    max-width: 400px;
+                }
+                
+                .waste-item {
+                    width: 60px;
+                    height: 60px;
+                }
+                
+                .trash-bin {
+                    width: 150px;
+                    height: 200px;
+                }
+                
+                .game-title {
+                    font-size: 2rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--Set up Page mobile & Desktop-->
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="./index.html" aria-current="page"
+                        ><span class="icon">🏡</span></a
+                    >
+                </li>
+                <li>
+                    <a href="exchange_product.html"
+                        ><span class="icon">🔃</span></a
+                    >
+                </li>
+                <li>
+                    <a href="events.html"><span class="icon">🗓️</span></a>
+                </li>
+                <li>
+                    <a href="recipe.html"><span class="icon">📋</span></a>
+                </li>
+                <li>
+                    <a href="setting.html"><span class="icon">⚙️</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="./index.html" aria-current="page">Home</a>
+                </li>
+                <li><a href="exchange_product.html">Exchange Products</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="recipe.html">Recipe</a></li>
+                <li><a href="setting.html">Setting</a></li>
+            </ul>
+        </nav>
+        <!--END Set up Page mobile & Desktop-->
+
+        <main>
+            <section>
+                <div class="container">
+                    <h1 class="game-title">FOGO Waste Sorting Game</h1>
+                    <p class="game-description">
+                        Drag items into the FOGO bin. Only food and garden organics will be accepted—other items will be rejected. Learn how to properly sort organic waste and protect our environment!
+                    </p>
+                    
+                    <div class="scoreboard">
+                        <div class="score">right: <span id="correct-count">0</span></div>
+                        <div class="errors">wrong: <span id="error-count">0</span></div>
+                    </div>
+                    
+                    <div class="game-area">
+                        <div id="trash-bin" class="trash-bin"></div>
+                        <div class="bin-label">FOGO bin（Food and Garden Organics）</div>
+                        
+                        <div class="waste-items" id="waste-items">
+                            <!-- Items will be generated by JavaScript -->
+                        </div>
+                        
+                        <button id="reset-game" class="reset-btn">Again</button>
+                    </div>
+                    
+                    <div id="feedback" class="feedback"></div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer-row">
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="policy.html">Policy and Privacy</a></li>
+                    </ul>
+                    <div class="footer-brand">
+                        <img
+                            src="images/logo.png"
+                            alt="Site logo"
+                            class="footer-logo"
+                        />
+                        <span>Waste Wise</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Game data
+                const wasteItems = [
+                    { emoji: '🍎', name: '苹果核', fogoAcceptable: true },
+                    { emoji: '🥗', name: '蔬菜残渣', fogoAcceptable: true },
+                    { emoji: '🍞', name: '面包屑', fogoAcceptable: true },
+                    { emoji: '☕', name: '咖啡渣', fogoAcceptable: true },
+                    { emoji: '🥚', name: '蛋壳', fogoAcceptable: true },
+                    { emoji: '🌱', name: '植物修剪物', fogoAcceptable: true },
+                    { emoji: '🍂', name: '落叶', fogoAcceptable: true },
+                    { emoji: '🌿', name: '草屑', fogoAcceptable: true },
+                    { emoji: '📰', name: '报纸', fogoAcceptable: false },
+                    { emoji: '🥫', name: '金属罐', fogoAcceptable: false },
+                    { emoji: '♻️', name: '塑料包装', fogoAcceptable: false },
+                    { emoji: '📱', name: '电子产品', fogoAcceptable: false },
+                    { emoji: '🔋', name: '电池', fogoAcceptable: false },
+                    { emoji: '💉', name: '医疗废物', fogoAcceptable: false },
+                    { emoji: '🧻', name: '使用过的纸巾', fogoAcceptable: false },
+                    { emoji: '💡', name: '灯泡', fogoAcceptable: false }
+                ];
+                
+                // Game elements
+                const trashBin = document.getElementById('trash-bin');
+                const wasteItemsContainer = document.getElementById('waste-items');
+                const feedback = document.getElementById('feedback');
+                const correctCountElement = document.getElementById('correct-count');
+                const errorCountElement = document.getElementById('error-count');
+                const resetButton = document.getElementById('reset-game');
+                
+                // Game state
+                let correctCount = 0;
+                let errorCount = 0;
+                let draggedItem = null;
+                
+                // Initialize game
+                function initGame() {
+                    // Clear existing items
+                    wasteItemsContainer.innerHTML = '';
+                    
+                    // Create waste items
+                    wasteItems.forEach((item, index) => {
+                        const wasteElement = document.createElement('div');
+                        wasteElement.className = 'waste-item';
+                        wasteElement.innerHTML = item.emoji;
+                        wasteElement.setAttribute('data-fogo-acceptable', item.fogoAcceptable);
+                        wasteElement.setAttribute('data-name', item.name);
+                        wasteElement.setAttribute('draggable', true);
+                        wasteElement.setAttribute('title', item.name);
+                        wasteElement.id = `waste-${index}`;
+                        
+                        // Add drag events
+                        wasteElement.addEventListener('dragstart', handleDragStart);
+                        
+                        wasteItemsContainer.appendChild(wasteElement);
+                    });
+                }
+                
+                // Drag and drop handlers
+                function handleDragStart(e) {
+                    draggedItem = e.target;
+                    e.dataTransfer.setData('text', e.target.id);
+                    e.target.classList.add('dragging');
+                    
+                    // For mobile touch events
+                    e.target.addEventListener('touchmove', function(e) {
+                        e.preventDefault();
+                        const touch = e.targetTouches[0];
+                        const moveX = touch.pageX;
+                        const moveY = touch.pageY;
+                        
+                        e.target.style.position = 'absolute';
+                        e.target.style.left = moveX - 40 + 'px';
+                        e.target.style.top = moveY - 40 + 'px';
+                    });
+                }
+                
+                function handleDragEnd(e) {
+                    if (draggedItem) {
+                        draggedItem.classList.remove('dragging');
+                        draggedItem = null;
+                    }
+                }
+                
+                // Trash bin events
+                trashBin.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                });
+                
+                trashBin.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    const id = e.dataTransfer.getData('text');
+                    const droppedItem = document.getElementById(id);
+                    
+                    if (droppedItem) {
+                        const isFogoAcceptable = droppedItem.getAttribute('data-fogo-acceptable') === 'true';
+                        const itemName = droppedItem.getAttribute('data-name');
+                        
+                        if (isFogoAcceptable) {
+                            // Correct - item is FOGO acceptable
+                            correctCount++;
+                            correctCountElement.textContent = correctCount;
+                            showFeedback(`Bingo! ${itemName} `, 'success');
+                            droppedItem.remove();
+                        } else {
+                            // Incorrect - item is not FOGO acceptable
+                            errorCount++;
+                            errorCountElement.textContent = errorCount;
+                            showFeedback(`Wrong! ${itemName} NONONO!`, 'error');
+                            
+                            // Add shake effect to trash bin
+                            trashBin.classList.add('shake');
+                            setTimeout(() => {
+                                trashBin.classList.remove('shake');
+                            }, 500);
+                            
+                            // Return item to original position
+                            droppedItem.classList.remove('dragging');
+                        }
+                    }
+                });
+                
+                // Mobile touch support
+                document.addEventListener('touchend', function(e) {
+                    if (!draggedItem) return;
+                    
+                    const touch = e.changedTouches[0];
+                    const bin = trashBin.getBoundingClientRect();
+                    
+                    if (
+                        touch.clientX > bin.left &&
+                        touch.clientX < bin.right &&
+                        touch.clientY > bin.top &&
+                        touch.clientY < bin.bottom
+                    ) {
+                        // Item dropped on bin
+                        const isFogoAcceptable = draggedItem.getAttribute('data-fogo-acceptable') === 'true';
+                        const itemName = draggedItem.getAttribute('data-name');
+                        
+                        if (isFogoAcceptable) {
+                            correctCount++;
+                            correctCountElement.textContent = correctCount;
+                            showFeedback(`Bingo! ${itemName} `, 'success');
+                            draggedItem.remove();
+                        } else {
+                            errorCount++;
+                            errorCountElement.textContent = errorCount;
+                            showFeedback(`Wrong! ${itemName} NONONO!`, 'error');
+                            
+                            trashBin.classList.add('shake');
+                            setTimeout(() => {
+                                trashBin.classList.remove('shake');
+                            }, 500);
+                            
+                            draggedItem.style.position = '';
+                            draggedItem.style.left = '';
+                            draggedItem.style.top = '';
+                        }
+                    } else {
+                        // Item dropped outside bin
+                        draggedItem.style.position = '';
+                        draggedItem.style.left = '';
+                        draggedItem.style.top = '';
+                    }
+                    
+                    draggedItem = null;
+                });
+                
+                // Show feedback message
+                function showFeedback(message, type) {
+                    feedback.textContent = message;
+                    feedback.className = `feedback ${type} show`;
+                    
+                    setTimeout(() => {
+                        feedback.classList.remove('show');
+                    }, 2000);
+                }
+                
+                // Reset game
+                resetButton.addEventListener('click', function() {
+                    correctCount = 0;
+                    errorCount = 0;
+                    correctCountElement.textContent = correctCount;
+                    errorCountElement.textContent = errorCount;
+                    initGame();
+                    showFeedback('游戏已重置!', 'success');
+                });
+                
+                // Initialize the game on load
+                initGame();
+                
+                // Global event listeners
+                document.addEventListener('dragend', handleDragEnd);
+            });
+        </script>
+    </body>
+</html>

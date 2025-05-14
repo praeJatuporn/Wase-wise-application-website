@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--Goolge font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Encode+Sans:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+        
+        <!-- CSS Linking -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        
+        <title>Exchange and Low-cost Purchase - Waste Wise</title>
+    </head>
+    
+    <body>
+        <!--Set up Page mobile & Desktop-->
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="./index.html"><span class="icon">🏡</span></a>
+                </li>
+                <li>
+                    <a href="exchange_product.html" aria-current="page"><span class="icon">🔃</span></a>
+                </li>
+                <li>
+                    <a href="events.html"><span class="icon">🗓️</span></a>
+                </li>
+                <li>
+                    <a href="recipe.html"><span class="icon">📋</span></a>
+                </li>
+                <li>
+                    <a href="setting.html"><span class="icon">⚙️</span></a>
+                </li>
+            </ul>
+        </nav>
+        
+        <nav id="nav-desktop" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li><a href="exchange_product.html" aria-current="page">Exchange Products</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="recipe.html">Recipe</a></li>
+                <li><a href="setting.html">Setting</a></li>
+            </ul>
+        </nav>
+        <!--END Set up Page mobile & Desktop-->
+        
+        <main>
+            <section class="hero-section">
+                <div class="container">
+                    <h1>Make Smart Choices, Cut Down On Waste</h1>
+                    <p>Help the Environment---Buy or Swap Food at Great Prices.</p>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <div class="container">
+                    <div class="filter-options">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search..." />
+                            <button class="search-btn">Search</button>
+                        </div>
+                        <div class="filter-controls">
+                            <select class="category-filter">
+                                <option value="">All Categories</option>
+                                <option value="vegetables">Vegetables and Fruits</option>
+                                <option value="dairy">dairy products</option>
+                                <option value="bakery">Dessert and bread</option>
+                                <option value="meat">Meats</option>
+                                <option value="other">Else</option>
+                            </select>
+                            <select class="distance-filter">
+                                <option value="">Distance</option>
+                                <option value="1">1km</option>
+                                <option value="5">5km</option>
+                                <option value="10">10km</option>
+                                <option value="20">20km</option>
+                            </select>
+                            <select class="sort-by">
+                                <option value="expiry">By the due date</option>
+                                <option value="price-low">The prices range from low to high</option>
+                                <option value="price-high">The prices range from high to low</option>
+                                <option value="distance">By distance</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-listing">
+                <div class="container">
+                    <h2>Products</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/exchange_strawberry.jpg" alt="Strawberry" />
+                                <span class="expiry-tag">Expires today</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Strawberry</h3>
+                                <p class="product-description">Fresh organic strawberries, special offer for expiration today</p>
+                                <div class="price-info">
+                                    <span class="discounted-price">$2</span>
+                                </div>
+                                <div class="seller-info">
+                                    <span class="seller-name">A mart</span>
+                                    <span class="distance">2.3km</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary">buy immediately</button>
+                                    <button class="btn-secondary">purchase now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/exchange_bread.jpg" alt="whole-wheat bread" />
+                                <span class="expiry-tag">Expires tomorrow</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>whole-wheat bread</h3>
+                                <p class="product-description">Healthy whole wheat bread, due tomorrow</p>
+                                <div class="price-info">
+                                    <span class="discounted-price">$1</span>
+                                </div>
+                                <div class="seller-info">
+                                    <span class="seller-name">B Bread</span>
+                                    <span class="distance">0.8km</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary">buy immediately</button>
+                                    <button class="btn-secondary">purchase now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/exchange_milk.jpg" alt="milk" />
+                                <span class="expiry-tag">Due in three days</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Organic milk</h3>
+                                <p class="product-description">Milk expires in three days</p>
+                                <div class="price-info">
+                                    <span class="discounted-price">$1</span>
+                                </div>
+                                <div class="seller-info">
+                                    <span class="seller-name">C mart</span>
+                                    <span class="distance">1.5km</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary">buy immediately</button>
+                                    <button class="btn-secondary">purchase now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/api/placeholder/300/200" alt="Vegetable boxes" />
+                                <span class="expiry-tag">Fresh today</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Vegetable boxes</h3>
+                                <p class="product-description">Fresh vegetables, should be consumed as soon as possible.</p>
+                                <div class="price-info">
+                                    <span class="discounted-price">$3</span>
+                                </div>
+                                <div class="seller-info">
+                                    <span class="seller-name">D fruit</span>
+                                    <span class="distance">3.1km</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary">buy immediately</button>
+                                    <button class="btn-secondary">purchase now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exchange-section">
+                <div class="container">
+                    <h2>Exchange</h2>
+                    <p>Do you have any idle food that you want to exchange? Post your exchange requirements and share resources with people nearby.</p>
+                    <div class="exchange-actions">
+                        <button class="btn-large">Publish my exchange item</button>
+                        <button class="btn-large btn-outline">View the exchange request</button>
+                    </div>
+                    
+                    <div class="exchange-listings">
+                        <div class="exchange-card">
+                            <div class="exchange-image">
+                                <img src="images/exchange_tomato.jpg" alt="Tomato exchange" />
+                            </div>
+                            <div class="exchange-info">
+                                <h3>Provided: 2kg of tomatoes</h3>
+                                <p>I bought too many tomatoes and my child doesn't like them</p>
+                                <p class="exchange-wants">Expected exchange: Any fruits</p>
+                                <div class="user-info">
+                                    <span class="user-name">Mr. Ni</span>
+                                    <span class="distance">0.5km</span>
+                                </div>
+                                <button class="btn-primary">Contact</button>
+                            </div>
+                        </div>
+                        
+                        <div class="exchange-card">
+                            <div class="exchange-image">
+                                <img src="images/exchange_jam.jpg" alt="Homemade jam exchange" />
+                            </div>
+                            <div class="exchange-info">
+                                <h3>Provided: Homemade strawberry jam</h3>
+                                <p>Handmade. Best to consume within 5 days</p>
+                                <p class="exchange-wants">Expected exchange: bread</p>
+                                <div class="user-info">
+                                    <span class="user-name">Mrs.Wang</span>
+                                    <span class="distance">1.2km</span>
+                                </div>
+                                <button class="btn-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer-row">
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="policy.html">Policy and Privacy</a></li>
+                    </ul>
+                    <div class="footer-brand">
+                        <img
+                            src="images/logo.png"
+                            alt="Site logo"
+                            class="footer-logo"
+                        />
+                        <span>Waste Wise</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
